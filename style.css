@@ -1,0 +1,167 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* DARK MODE */
+body {
+    background: #0f172a;
+    color: #e5e7eb;
+}
+
+/* HEADER */
+header.top {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+}
+
+header.top a {
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+/* CONTAINER */
+.materi-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* MATERI */
+.materi {
+    display: none;
+    max-width: 900px;
+    background: rgba(255,255,255,0.08);
+    padding: 40px;
+    border-radius: 15px;
+    line-height: 1.8;
+}
+
+.materi.active {
+    display: block;
+}
+
+.materi p {
+    margin-bottom: 18px;
+    text-align: justify;
+}
+
+
+/* NAVIGATION */
+.nav-btn {
+    margin-top: 20px;
+}
+
+.nav-btn button {
+    padding: 10px 25px;
+    margin: 5px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    background: #22c55e;
+    font-weight: bold;
+}
+
+.nav-btn button:hover {
+    background: #4ade80;
+}
+
+/* ===================== */
+/* INDEX PAGE */
+/* ===================== */
+
+.page-index {
+    background: linear-gradient(135deg, #020617, #0f172a);
+    color: #e5e7eb;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-card {
+    background: rgba(255,255,255,0.08);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 480px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 40px rgba(0,0,0,0.4);
+}
+
+.hero-card h1 {
+    font-size: 34px;
+    margin-bottom: 8px;
+    color: #38bdf8;
+}
+
+.hero-card h2 {
+    font-size: 20px;
+    margin-bottom: 25px;
+    font-weight: normal;
+}
+
+.info p {
+    margin: 8px 0;
+    font-size: 15px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 30px;
+    background: #22c55e;
+    color: #000;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #4ade80;
+    transform: scale(1.05);
+}
+
+footer {
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    opacity: 0.6;
+}
+
+/* === Animasi Slide Materi === */
+.materi {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: all 0.6s ease;
+}
+
+.materi.active {
+    position: relative;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Animasi keluar ke kiri */
+.materi.exit-left {
+    opacity: 0;
+    transform: translateX(-40px);
+}
+
+/* Animasi keluar ke kanan */
+.materi.exit-right {
+    opacity: 0;
+    transform: translateX(40px);
+}
