@@ -2,30 +2,505 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Machine Learning</title>
+  <title>Materi Machine Learning</title>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+  <!-- CSS LANGSUNG DI SINI -->
+  <style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    /* DARK MODE */
+    body {
+        background: #0f172a;
+        color: #e5e7eb;
+    }
+    
+    /* HEADER */
+    header.top {
+        position: absolute;
+        top: 20px;
+        left: 30px;
+    }
+    
+    header.top a {
+        color: #38bdf8;
+        text-decoration: none;
+    }
+    
+    /* CONTAINER */
+    .materi-container {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+    
+    /* MATERI */
+    .materi {
+        display: none;
+        max-width: 900px;
+        background: rgba(255,255,255,0.08);
+        padding: 40px;
+        border-radius: 15px;
+        line-height: 1.8;
+    }
+    
+    .materi.active {
+        display: block;
+    }
+    
+    .materi p {
+        margin-bottom: 18px;
+        text-align: justify;
+    }
+    
+    
+    /* NAVIGATION */
+    .nav-btn {
+        margin-top: 20px;
+    }
+    
+    .nav-btn button {
+        padding: 10px 25px;
+        margin: 5px;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        background: #22c55e;
+        font-weight: bold;
+    }
+    
+    .nav-btn button:hover {
+        background: #4ade80;
+    }
+    
+    /* ===================== */
+    /* INDEX PAGE */
+    /* ===================== */
+    
+    .page-index {
+        background: linear-gradient(135deg, #020617, #0f172a);
+        color: #e5e7eb;
+    }
+    
+    .hero {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .hero-card {
+        background: rgba(255,255,255,0.08);
+        padding: 40px;
+        border-radius: 20px;
+        text-align: center;
+        max-width: 480px;
+        backdrop-filter: blur(12px);
+        box-shadow: 0 0 40px rgba(0,0,0,0.4);
+    }
+    
+    .hero-card h1 {
+        font-size: 34px;
+        margin-bottom: 8px;
+        color: #38bdf8;
+    }
+    
+    .hero-card h2 {
+        font-size: 20px;
+        margin-bottom: 25px;
+        font-weight: normal;
+    }
+    
+    .info p {
+        margin: 8px 0;
+        font-size: 15px;
+    }
+    
+    .btn {
+        display: inline-block;
+        margin-top: 25px;
+        padding: 12px 30px;
+        background: #22c55e;
+        color: #000;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+    
+    .btn:hover {
+        background: #4ade80;
+        transform: scale(1.05);
+    }
+    
+    footer {
+        position: absolute;
+        bottom: 15px;
+        width: 100%;
+        text-align: center;
+        font-size: 12px;
+        opacity: 0.6;
+    }
+    
+    /* === Animasi Slide Materi === */
+    .materi {
+        opacity: 0;
+        transform: translateX(40px);
+        transition: all 0.6s ease;
+    }
+    
+    .materi.active {
+        position: relative;
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+    /* Animasi keluar ke kiri */
+    .materi.exit-left {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    
+    /* Animasi keluar ke kanan */
+    .materi.exit-right {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+  </style>
 </head>
-<body>
 
-  <div class="container">
-    <h1>📘 Machine Learning</h1>
+    <body class="page-materi">
+    
+    <header class="top">
+        <a href="index.html">⬅ Kembali</a>
+    </header>
+    
+    <main class="materi-container">
+        
+    <section class="materi active">
+    <h2>Pertemuan 1</h2>
+    <h3>Pengenalan Machine Learning</h3>
+    
+    <p>
+    Machine Learning merupakan salah satu cabang dari Artificial Intelligence
+    (AI) yang berfokus pada pengembangan sistem komputer agar mampu belajar
+    dari data tanpa harus diprogram secara eksplisit. Artinya, sistem tidak
+    diberikan aturan baku, melainkan belajar sendiri berdasarkan pola yang
+    terdapat dalam data.
+    </p>
+    
+    <p>
+    Pada pemrograman konvensional, seorang programmer harus menentukan aturan
+    secara detail. Jika kondisi berubah, maka program harus dimodifikasi.
+    Sebaliknya, pada Machine Learning, sistem dapat menyesuaikan diri dengan
+    data baru tanpa perlu perubahan kode secara langsung.
+    </p>
+    
+    <p>
+    Machine Learning bekerja dengan cara mengumpulkan data, mempelajari pola
+    yang ada di dalam data tersebut, kemudian menggunakan hasil pembelajaran
+    untuk membuat prediksi atau keputusan. Semakin banyak dan semakin baik
+    kualitas data yang digunakan, maka hasil prediksi juga akan semakin akurat.
+    </p>
+    
+    <h3>Perbedaan Machine Learning dan Pemrograman Konvensional</h3>
+    
+    <p>
+    Pada pemrograman konvensional, input dan aturan diproses untuk menghasilkan
+    output. Sedangkan pada Machine Learning, input dan output digunakan untuk
+    membentuk aturan atau model secara otomatis.
+    </p>
+    
+    <h3>Jenis-Jenis Machine Learning</h3>
+    
+    <ul>
+    <li>Supervised Learning</li>
+    <li>Unsupervised Learning</li>
+    <li>Semi-Supervised Learning</li>
+    <li>Reinforcement Learning</li>
+    </ul>
+    
+    <h3>Contoh Penerapan Machine Learning</h3>
+    
+    <p>
+    Machine Learning banyak digunakan dalam kehidupan sehari-hari tanpa disadari,
+    seperti pada sistem rekomendasi video di YouTube, rekomendasi produk di
+    e-commerce, pengenalan wajah pada smartphone, hingga sistem navigasi dan
+    kendaraan otonom.
+    </p>
+    
+    <p>
+    <b>Contoh kasus:</b><br>
+    Pada aplikasi YouTube, sistem Machine Learning mempelajari video apa saja
+    yang sering ditonton pengguna, durasi tontonan, serta interaksi pengguna.
+    Berdasarkan data tersebut, sistem akan merekomendasikan video lain yang
+    memiliki pola serupa.
+    </p>
+    
+    </section>
+    
+    <section class="materi">
+        <h2>Pertemuan 2</h2>
+        <h3>Data Preprocessing</h3>
+        
+        <p>
+        Data preprocessing adalah proses pengolahan data mentah agar menjadi data
+        yang bersih, terstruktur, dan siap digunakan dalam proses Machine Learning.
+        Tahapan ini sangat penting karena kualitas data sangat berpengaruh terhadap
+        akurasi dan performa model.
+        </p>
+        
+        <p>
+        Data mentah sering kali mengandung nilai kosong, data ganda, kesalahan input,
+        atau perbedaan skala antar fitur. Jika data tersebut langsung digunakan tanpa
+        preprocessing, maka model Machine Learning dapat menghasilkan prediksi yang
+        tidak akurat.
+        </p>
+        
+        <h3>Tahapan Data Preprocessing</h3>
+        
+        <ul>
+        <li><b>Data Cleaning</b> – Menghapus data duplikat, noise, dan data tidak konsisten</li>
+        <li><b>Handling Missing Value</b> – Mengisi atau menghapus data yang bernilai kosong</li>
+        <li><b>Encoding</b> – Mengubah data kategorikal menjadi numerik</li>
+        <li><b>Normalization</b> – Menyamakan skala data agar tidak terjadi dominasi fitur</li>
+        </ul>
+        
+        <h3>Rumus Normalisasi Min-Max</h3>
+        <p>
+        X' = (X − Xmin) / (Xmax − Xmin)
+        </p>
+        
+        <p>
+        <b>Contoh kasus:</b><br>
+        Dataset nilai mahasiswa memiliki kolom usia dan nilai ujian. Karena skala
+        usia dan nilai berbeda, maka diperlukan normalisasi agar model tidak
+        berat sebelah pada salah satu fitur.
+        </p>
+        </section>
+    
+        <section class="materi">
+            <h2>Pertemuan 3</h2>
+            <h3>Supervised Learning</h3>
+            
+            <p>
+            Supervised Learning merupakan metode Machine Learning yang menggunakan data
+            berlabel, yaitu data yang memiliki pasangan input dan output. Model belajar
+            dengan cara membandingkan hasil prediksi dengan nilai sebenarnya.
+            </p>
+            
+            <p>
+            Jika prediksi yang dihasilkan masih salah, maka model akan menyesuaikan
+            parameter agar kesalahan tersebut dapat diminimalkan pada proses pelatihan
+            selanjutnya.
+            </p>
+            
+            <h3>Jenis Supervised Learning</h3>
+            
+            <ul>
+            <li><b>Klasifikasi</b> – Output berupa kelas atau kategori</li>
+            <li><b>Regresi</b> – Output berupa nilai numerik</li>
+            </ul>
+            
+            <h3>Rumus Error (Mean Squared Error)</h3>
+            <p>
+            MSE = (1/n) × Σ(y − ŷ)²
+            </p>
+            
+            <p>
+            <b>Contoh kasus:</b><br>
+            Menentukan apakah email termasuk spam atau tidak berdasarkan data email yang
+            sudah diberi label spam dan non-spam.
+            </p>
+            </section>
+    
+            <section class="materi">
+                <h2>Pertemuan 4</h2>
+                <h3>K-Nearest Neighbor (KNN)</h3>
+                
+                <p>
+                K-Nearest Neighbor (KNN) adalah algoritma Supervised Learning yang menentukan
+                kelas suatu data berdasarkan kedekatan dengan data latih di sekitarnya.
+                KNN tidak membangun model, tetapi menggunakan seluruh data latih.
+                </p>
+                
+                <p>
+                Nilai K menunjukkan jumlah tetangga terdekat yang digunakan dalam proses
+                klasifikasi. Kelas dengan jumlah terbanyak dari K tetangga tersebut akan
+                menjadi hasil prediksi.
+                </p>
+                
+                <h3>Rumus Euclidean Distance</h3>
+                <p>
+                d = √((x1 − x2)² + (y1 − y2)²)
+                </p>
+                
+                <h3>Kelebihan dan Kekurangan</h3>
+                <ul>
+                <li>Mudah dipahami dan diimplementasikan</li>
+                <li>Tidak membutuhkan training model</li>
+                <li>Lambat jika dataset sangat besar</li>
+                </ul>
+                
+                <p>
+                <b>Contoh kasus:</b><br>
+                Menentukan minat olahraga seseorang berdasarkan usia dan jam olahraga
+                dengan membandingkan data orang lain yang paling dekat.
+                </p>
+                </section>
+                <section class="materi">
+                    <h2>Pertemuan 5</h2>
+                    <h3>Naive Bayes</h3>
+                    
+                    <p>
+                    Naive Bayes adalah algoritma klasifikasi probabilistik yang menggunakan
+                    Teorema Bayes dengan asumsi bahwa setiap fitur bersifat independen satu sama
+                    lain.
+                    </p>
+                    
+                    <p>
+                    Walaupun asumsi tersebut sederhana, Naive Bayes terbukti efektif dalam
+                    klasifikasi teks seperti email spam dan analisis sentimen.
+                    </p>
+                    
+                    <h3>Rumus Teorema Bayes</h3>
+                    <p>
+                    P(A|B) = (P(B|A) × P(A)) / P(B)
+                    </p>
+                    
+                    <h3>Kelebihan Naive Bayes</h3>
+                    <ul>
+                    <li>Komputasi cepat</li>
+                    <li>Cocok untuk data teks</li>
+                    <li>Efisien untuk dataset besar</li>
+                    </ul>
+                    
+                    <p>
+                    <b>Contoh kasus:</b><br>
+                    Jika kata “gratis” sering muncul pada email spam, maka probabilitas email
+                    tersebut diklasifikasikan sebagai spam akan meningkat.
+                    </p>
+                    </section>
+                    <section class="materi">
+                        <h2>Pertemuan 6</h2>
+                        <h3>Perceptron</h3>
+                        
+                        <p>
+                        Perceptron merupakan model jaringan saraf tiruan paling sederhana yang
+                        digunakan untuk klasifikasi data linear. Algoritma ini meniru cara kerja
+                        neuron pada manusia.
+                        </p>
+                        
+                        <p>
+                        Perceptron bekerja dengan mengalikan input dengan bobot, menjumlahkannya,
+                        kemudian melewati fungsi aktivasi untuk menghasilkan output.
+                        </p>
+                        
+                        <h3>Rumus Perceptron</h3>
+                        <p>
+                        y = w1x1 + w2x2 + … + b
+                        </p>
+                        
+                        <h3>Keterbatasan</h3>
+                        <ul>
+                        <li>Hanya mampu menangani data linear</li>
+                        <li>Digunakan untuk klasifikasi biner</li>
+                        </ul>
+                        
+                        <p>
+                        <b>Contoh kasus:</b><br>
+                        Menentukan apakah mahasiswa lulus atau tidak berdasarkan nilai tugas dan
+                        nilai UAS.
+                        </p>
+                        </section>
+    
+                        <section class="materi">
+                            <h2>Pertemuan 7</h2>
+                            <h3>Linear Regression</h3>
+                            
+                            <p>
+                            Linear Regression adalah algoritma Machine Learning yang digunakan untuk
+                            memprediksi nilai numerik dengan memodelkan hubungan antara variabel
+                            independen dan variabel dependen dalam bentuk garis lurus.
+                            </p>
+                            
+                            <p>
+                            Model berusaha mencari garis terbaik yang meminimalkan selisih antara nilai
+                            prediksi dan nilai sebenarnya.
+                            </p>
+                            
+                            <h3>Rumus Regresi Linear</h3>
+                            <p>
+                            y = mx + b
+                            </p>
+                            
+                            <h3>Penerapan Linear Regression</h3>
+                            <ul>
+                            <li>Prediksi harga rumah</li>
+                            <li>Peramalan penjualan</li>
+                            <li>Analisis tren data</li>
+                            </ul>
+                            
+                            <p>
+                            <b>Contoh kasus:</b><br>
+                            Memprediksi harga rumah berdasarkan luas bangunan, di mana semakin luas
+                            rumah maka harga cenderung semakin tinggi.
+                            </p>
+                            </section>
+    
+                            <div class="nav-btn">
+                                <button onclick="prevMateri()">⬅ Prev</button>
+                                <button onclick="nextMateri()">Next ➡</button>
+                            </div>
+                        
+                        </main>
+                        
+                        <script src="js/materi.js"></script>
+                        </body>
+                        </html>
 
-    <p>Media Pembelajaran Perkuliahan</p>
+  
+  <script>
+    const materi = document.querySelectorAll(".materi");
+let index = 0;
 
-    <p><b>Nama:</b> Febtrianto Alzufry</p>
-    <p><b>NIM:</b> 231011402206</p>
-    <p><b>Dosen:</b> Octaviana Anugrah Ade Purnama, S.Kom., M.Kom.</p>
+function showMateri(newIndex, direction) {
+    if (newIndex < 0 || newIndex >= materi.length) return;
 
-    <a class="btn" href="materi.html">📚 Lihat Materi</a>
+    // keluar
+    materi[index].classList.remove("active");
+    materi[index].classList.add(direction === "next" ? "exit-left" : "exit-right");
 
-    <footer>
-      © 2026 Universitas Pamulang
-    </footer>
-  </div>
+    setTimeout(() => {
+        materi[index].classList.remove("exit-left", "exit-right");
 
-  <!-- JS -->
-  <script src="materi.js"></script>
+        index = newIndex;
+        materi[index].classList.add("active");
+    }, 500);
+}
+
+function nextMateri() {
+    showMateri(index + 1, "next");
+}
+
+function prevMateri() {
+    showMateri(index - 1, "prev");
+}
+
+/* Keyboard support */
+document.addEventListener("keydown", function (e) {
+    if (e.key === "ArrowRight") nextMateri();
+    if (e.key === "ArrowLeft") prevMateri();
+});
+
+  </script>
+
 </body>
 </html>
